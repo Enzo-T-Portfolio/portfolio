@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets</title>
+    <link rel="stylesheet" href="style.css"> <!-- Assurez-vous que le chemin vers votre CSS est correct -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Mes Projets</h1>
+        <a href="index.html" class="return-button"><i class="fas fa-arrow-left"></i></a>
+    </header>
+
+    <main>
+        <section class="projects-section">
+            <div class="filter-buttons-projet">
+                <button class="category-button-projet" data-category="all">Tous</button>
+                <button class="category-button-projet" data-category="web">Site WEB</button>
+                <button class="category-button-projet" data-category="cub">CUB</button>
+                <button class="category-button-projet" data-category="entreprise">Entreprise</button>
+            </div>
+            <div class="projects-content-projet">
+                <div class="project-card-projet" data-title="CUB" data-category="cub" data-description="<h4>Contexte du projet : </h4><p>Description du projet</p>" onclick="openModal(this)">
+                    <div class="card-front-projet">
+                        <h3>Projet CUB</h3>
+                    </div>
+                </div>
+                <div class="project-card-projet" data-title="Création Portfolio" data-category="web" data-description="<img src='images/projet-portfolio.png' class='modal-image'><h4>Contexte du projet : </h4><p>Au cours de ma formation, j'ai entrepris la création et la réalisation de mon propre portfolio en tant que média de présentation. Ce portfolio a une double importance : il reflète mon parcours académique, mais aussi de mes compétences professionnelles acquises durant les deux années de ma formation en BTS.</p><h4>Technologie Utilisé : </h4><p>Front-End : HTML, CSS, Javascript</p><p>Design : Font Awesome, animations CSS</p><p>Outils de Développement : Visual Studio Code</p>" onclick="openModal(this)">
+                    <div class="card-front-projet">
+                        <h3>Portfolio</h3>
+                    </div>
+                </div>
+                <div class="project-card-projet" data-title="Mission & Activité en entreprise" data-category="entreprise" data-description="<img src='images/eva-team.png' class='modal-image'><h4>Introduction</h4><p>Durant mes deux années d’alternance chez EVA TEAM, j’ai participé à différentes missions et projets qui m’ont permis de développer mes compétences techniques et professionnelles. Ce document présente un aperçu des principales activités réalisées, illustrant mon évolution et mon implication au sein de l’entreprise.</p>" onclick="openModal(this)">
+                    <div class="card-front-projet">
+                        <h3>Mission & Activité</h3>
+                    </div>
+                </div>
+                <div class="project-card-projet" data-title="Projet 4" data-category="web" onclick="openModal('Projet 4', 'Description détaillée du projet 4...')">
+                    <div class="card-front-projet">
+                        <h3>Projet 4</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@example.com</p>
+                <p>Téléphone: +33 1 23 45 67 89</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="index.html#bts-sio">BTS SIO</a></li>
+                    <li><a href="index.html#competences">Compétences</a></li>
+                    <li><a href="index.html#parcours">Parcours</a></li>
+                    <li><a href="projet.html">Projets</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="vt.html">Veille Technologique</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-moi</h3>
+                <div class="social-media">
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+            <p>&copy; 2023 Enzo T. Tous droits réservés.</p>
+    </footer>
+    <script src="js/script-3.js"></script> <!-- Lien vers le fichier JavaScript -->
+</body>

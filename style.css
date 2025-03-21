@@ -1,0 +1,996 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+  padding: 15px;
+  border-bottom-right-radius: 350px; /* Augmenter l'arrondi du coin inférieur droit */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio-title {
+  font-size: 24px;
+  font-weight: bold;
+  flex-grow: 0; /* Empêche le titre de s'étendre */
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Aligne les liens de navigation à droite */
+  flex-grow: 1; /* Permet aux liens de navigation de prendre l'espace restant */
+  gap: 15px;
+}
+
+.navbar a {
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: white;
+  color: #6a1b9a;
+}
+
+/* ---- Section header-info ---- */
+.header-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+  margin-top: 50px;
+}
+
+.header-info img {
+  width: 555px;
+  height: 555px;
+  border-radius: 50%;
+  margin-left: -150px;
+}
+
+.header-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-info h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff9800;
+  margin: 0;
+}
+
+/* ---- Bouton Voir mon CV ---- */
+.cv-btn-container {
+  margin-top: 30px;
+}
+
+.cv-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff9800;
+  color: white;
+  padding: 12px 60px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  transition: none;
+}
+
+.cv-btn:hover {
+  background-color: #ff9800;
+}
+
+/* ---- Reste des styles ---- */
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.circle-competence {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.circle-competence div {
+  text-align: center;
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-competence div img {
+  width: 40px;
+  height: 40px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-grid div {
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.project-grid div:hover {
+  background-color: #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.summary div {
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+#dynamic-text-container {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  overflow: hidden;
+}
+
+#dynamic-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+#bts-sio {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bts-sio-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.bts-sio-text {
+  flex: 1;
+}
+
+.bts-sio-text h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.bts-sio-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.bts-sio-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bts-sio-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Ajouter du style aux boutons */
+.bts-sio-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.bts-sio-btn {
+  background-color: #ff9800; /* Fond jaune */
+  color: white;
+  border: none; /* Supprime le contour */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Coins légèrement arrondis */
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Ajoute une transition fluide */
+}
+
+.bts-sio-btn:hover {
+  transform: translateY(-5px); /* Déplace le bouton vers le haut de 5px */
+  background-color: #ff9800; /* Légèrement plus foncé au survol */
+  text-decoration: none;
+}
+
+.bts-sio-btn:active {
+  transform: translateY(0); /* Lorsque l'on clique, on remet le bouton à sa position normale */
+}
+
+/* Style des textes SLAM et SISR */
+.slam-text, .sisr-text {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  text-align: center;
+  max-width: 400px;
+}
+
+
+/* Compétences */
+.competence-section {
+  background-color: #6a1b9a; /* Violet */
+  padding: 40px 0;
+  border-radius: 50px;
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+
+.competence-title {
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.competence-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.competence-img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.competence-img-glpi {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.competence {
+  text-align: center;
+  margin: 20px; /* Ajoutez des marges pour plus d'espace */
+}
+
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.circle {
+  transform: rotate(-90deg);
+}
+
+.progress {
+  stroke-dasharray: 314; /* Circonférence du cercle */
+  stroke-dashoffset: 314; /* Départ à 100% vide */
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.competence-icon {
+  font-size: 48px;
+  color: #ff9800;
+  position: absolute;
+}
+
+.competence p {
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Center the buttons and style them */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+
+.category-button:hover {
+    background-color: #e68600;
+    transform: translateY(-5px);
+}
+
+.category-button:active {
+    transform: translateY(0);
+}
+
+
+/* Section Diplôme */
+.diplomes-section {
+  background-color: #6a1b9a; /* Violet */
+  padding: 40px 20px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.diplomes-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.diplomes-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.diplome-card {
+  perspective: 1000px;
+  width: 250px; /* Réduit la largeur des cartes */
+  height: 150px; /* Réduit la hauteur des cartes */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform: translateZ(0); /* Force l'utilisation de l'accélération matérielle */
+}
+
+.diplome-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Masque la face arrière lorsque la carte est face visible */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px; /* Réduit le padding pour s'adapter à la nouvelle taille */
+  box-sizing: border-box;
+}
+
+.card-front {
+  color: white;
+  font-size: 18px; /* Réduit la taille de la police pour s'adapter à la nouvelle taille */
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  color: #ff9800;
+  font-size: 14px; /* Réduit la taille de la police pour s'adapter à la nouvelle taille */
+}
+
+
+
+
+/* Section Parcours */
+
+#parcours {
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+  padding: 40px 20px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  text-align: center;
+}
+
+#parcours a {
+  color: inherit; /* Hérite de la couleur du texte environnant */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+  transition: color 0.3s; /* Ajoute une transition en douceur pour le changement de couleur */
+}
+  
+.orange-link {
+  color: #ff9800 !important; /* Force la couleur orange */
+  text-decoration: none;
+}
+
+.orange-link:hover {
+  text-decoration: underline;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 8px; /* Augmenter l'épaisseur de la barre verticale */
+  background-color: #ff9800; /* Jaune orangé */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -4px; /* Ajustez pour centrer la barre */
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px; /* Espacement entre les items */
+}
+
+.timeline-marker {
+  width: 20px; /* Ajustez la taille du rond pour correspondre à la barre */
+  height: 20px;
+  background-color: #ff9800; /* Jaune orangé */
+  border: 2px solid #6a1b9a; /* Bordure pour différencier le marqueur */
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px; /* Centrer le rond sur la barre */
+  top: 0; /* Aligner le marqueur en haut */
+}
+
+.timeline-content {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  position: relative;
+  width: 45%; /* Ajustez la largeur pour raccourcir les encadrés */
+  top: -5px; /* Ajustez pour aligner avec le marqueur */
+}
+
+.timeline-content.left {
+  margin-left: 10px; /* Rapprocher le contenu de la barre pour les éléments à gauche */
+}
+
+.timeline-content.right {
+  margin-left: -300px; /* Rapprocher davantage le contenu de la barre pour l'élément EPITA */
+  left: 50%;
+  transform: translateX(50%);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+}
+
+
+/* Section Footer */
+footer {
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-top-left-radius: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-media a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.social-media a:hover {
+  color: #ff9800;
+}
+
+/* Section projet boutton retour*/
+
+.return-button {
+  display: inline-block;
+  padding: 10px 20px; /* Réduit le padding pour un bouton plus petit */
+  font-size: 16px; /* Réduit la taille de la police */
+  color: white;
+  background-color: #ff9800; /* Couleur de fond orange */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-left: auto;
+}
+
+.return-button:hover {
+  background-color: #e68600; /* Couleur de fond légèrement plus foncée au survol */
+}
+
+.return-button:active {
+  transform: translateY(0); /* Retour à la position normale lors du clic */
+}
+
+.header-compétence {
+  padding: 20px;
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+}
+
+.header-container-compétence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  text-align: center;
+  flex-grow: 1; /* Permet au titre de prendre l'espace disponible */
+}
+
+
+/* Section projet*/
+.projects-section {
+  padding: 40px 20px;
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.projects-content-projet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card-projet {
+  width: 250px; /* Largeur des cartes */
+  height: 150px; /* Hauteur des cartes */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Agrandit légèrement la carte au survol */
+}
+
+.card-front-projet {
+  color: white;
+  font-size: 18px;
+}
+
+
+/* bouton flitre projet*/
+.filter-buttons-projet {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.category-button-projet {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff9800; /* Fond jaune orangé */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.category-button-projet:hover {
+  background-color: #e68600; /* Légèrement plus foncé au survol */
+  transform: translateY(-3px); /* Légère élévation au survol */
+}
+
+.category-button-projet:active {
+  transform: translateY(0); /* Retour à la position normale lors du clic */
+}
+
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto; /* Réduit la marge pour agrandir le modal */
+  padding: 45px;
+  border: 1px solid #888;
+  width: 100%; /* Agrandit la largeur du modal */
+  max-width: 600px; /* Limite la largeur maximale pour les grands écrans */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Espace entre l'image et le texte */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Documentation projet*/
+.documentation-section {
+  padding: 40px 20px;
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.documentation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.documentation-card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+  overflow: hidden;
+}
+
+.documentation-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.documentation-card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(100%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.overlay-button {
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px; /* Ajustez la taille de l'icône */
+  transition: background-color 0.3s;
+}
+
+.overlay-button:hover {
+  background-color: rgba(255, 152, 0, 0.5); /* Fond semi-transparent au survol */
+}
+
+.documentation-card:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.documentation-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.documentation-card p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.card-image {
+  width: 50%; /* Réduit la largeur de l'image */
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: block; /* Assure que l'image est centrée */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Barre de recherche documentation */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#search-bar {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+#search-button {
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#search-button:hover {
+  background-color: #e68600;
+}
+
+
+/*Section veille technologique */
+.vt-section {
+  padding: 40px 80px;
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #e68600;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 100%;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.news-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.news-content {
+  flex-grow: 1;
+}
+
+.news-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.news-content h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: black;
+}
+
+.news-content p {
+  font-size: 14px;
+  color: #333;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+
+.youtube-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.youtube-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.youtube-item {
+  background-color: #ffffff;
+  border: 1px solid #e68600;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 150px; /* Largeur fixe pour les carrés */
+  transition: transform 0.3s;
+}
+
+.youtube-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.youtube-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.youtube-item p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+
+
