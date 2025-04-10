@@ -1018,5 +1018,17 @@ header h1 {
   margin: 0;
 }
 
+/* CUB projet */
+.cub-project-section {
+  background-color: #6a1b9a; /* Violet */
+  color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.cub-project-section h2 {
+  color: white; /* Couleur orange pour les titres */
+}
 
