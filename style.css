@@ -74,6 +74,7 @@ header {
   margin: 0;
 }
 
+
 /* ---- Bouton Voir mon CV ---- */
 .cv-btn-container {
   margin-top: 30px;
@@ -630,6 +631,16 @@ header h1 {
   flex-grow: 1; /* Permet au titre de prendre l'espace disponible */
 }
 
+.card-front-projet h3 a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Utilise la couleur de texte par défaut */
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+}
+
+.card-front-projet h3 a:hover {
+  text-decoration: none; /* Supprime le soulignement au survol */
+  color: inherit; /* Garde la couleur de texte par défaut au survol */
+}
 
 /* Section projet*/
 .projects-section {
