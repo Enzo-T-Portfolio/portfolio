@@ -1029,6 +1029,51 @@ header h1 {
 }
 
 .cub-project-section h2 {
-  color: white; 
+  color: white; /* Couleur orange pour les titres */
 }
 
+.cub-card-container {
+  display: flex;
+  justify-content: center; /* Centre les cartes */
+  gap: 50px; /* Réduit l'espace entre les cartes */
+}
+
+.cub-card {
+  background-color: white; /* Violet plus clair pour les cartes */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Cache le contenu débordant */
+  width: 400px; /* Réduit la largeur des cartes */
+  height: 250px; /* Réduit la hauteur des cartes */
+  transition: transform 0.3s;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cub-card img {
+  max-width: 100%;
+  max-height: 100%; /* Permet à l'image de s'adapter à la hauteur de la carte */
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.cub-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.cub-card a:hover img {
+  transform: scale(1.05);
+}
+
+.s-h2 {
+  text-align: center;
+}
