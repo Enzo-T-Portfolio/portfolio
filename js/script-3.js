@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const category = button.getAttribute("data-category");
             projectCards.forEach(card => {
                 if (category === "all" || card.getAttribute("data-category") === category) {
-                    card.style.display = "block";
+                    card.style.display = "flex"; // Utilisez 'flex' pour maintenir le centrage
                 } else {
                     card.style.display = "none";
                 }

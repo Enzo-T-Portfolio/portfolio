@@ -659,46 +659,47 @@ header h1 {
   gap: 20px;
 }
 
-.project-card-projet {
-  width: 250px; /* Largeur des cartes */
-  height: 150px; /* Hauteur des cartes */
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
+.project-card-projet, .project-card-projet-1 {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 250px; /* Largeur des cartes */
+  height: 150px; /* Hauteur des cartes */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 15px;
   box-sizing: border-box;
   cursor: pointer;
   transition: transform 0.3s;
 }
 
-.project-card-projet-1 {
-  width: 250px; /* Largeur des cartes */
-  height: 150px; /* Hauteur des cartes */
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 15px;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
 
 .project-card:hover {
   transform: scale(1.05); /* Agrandit légèrement la carte au survol */
 }
 
 .card-front-projet {
-  color: white;
-  font-size: 18px;
-  text-align: center;
+  width: 100%; /* Assurez-vous que le conteneur prend toute la largeur de la carte */
 }
 
+
+.card-front-projet h3 {
+  text-align: center; /* Centre le texte */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les paddings par défaut */
+}
+
+.card-front-projet h3 a {
+  display: inline-block;
+  width: 100%; /* Assurez-vous que le lien prend toute la largeur disponible */
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Utilise la couleur de texte par défaut */
+}
+
+.card-front-projet h3 a:hover {
+  text-decoration: none; /* Supprime le soulignement au survol */
+}
 
 /* bouton flitre projet*/
 .filter-buttons-projet {
