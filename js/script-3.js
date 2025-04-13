@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     projectCards.forEach(card => {
         card.addEventListener("click", function () {
-            openModal(card);
+            if (card.hasAttribute("data-title")) {
+                openModal(card);
+            }
         });
     });
 });
