@@ -1079,3 +1079,24 @@ header h1 {
 .s-h2 {
   text-align: center;
 }
+
+.cub-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centre les cartes dans le conteneur */
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+.cub-card-wrapper {
+  flex: 1 1 calc(33.333% - 20px); /* Trois cartes par ligne avec espacement */
+  box-sizing: border-box;
+  text-align: center; /* Centre le texte à l'intérieur de chaque wrapper */
+  max-width: calc(33.333% - 20px); /* Limite la largeur maximale */
+  margin: auto; /* Centre chaque wrapper individuellement */
+}
+
+.cub-card img {
+  max-width: 100%;
+  height: auto;
+}
+
