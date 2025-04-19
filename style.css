@@ -1100,3 +1100,26 @@ header h1 {
   height: auto;
 }
 
+/* Style pour le bouton "PROJET CUB" */
+
+.pdf-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff9800; /* Fond jaune orangé */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.pdf-button:hover {
+  background-color: #e68600; /* Légèrement plus foncé au survol */
+  transform: translateY(-3px); /* Légère élévation au survol */
+}
+
+.pdf-button:active {
+  transform: translateY(0); /* Retour à la position normale lors du clic */
+}
