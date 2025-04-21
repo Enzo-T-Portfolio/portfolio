@@ -1262,7 +1262,7 @@ header h1 {
 }
 
 .d-btn-container {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .cv-btn {
@@ -1284,3 +1284,20 @@ header h1 {
   background-color: #ff9800;
 }
 
+.card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre horizontalement les éléments */
+  text-align: center; /* Centre le texte */
+}
+
+.d-btn-container {
+  margin-top: 10px; /* Ajoute un espace au-dessus du conteneur du bouton */
+}
+
+.small-button {
+  width: auto; /* Ajuste la largeur du bouton automatiquement */
+  padding: 5px 10px; /* Ajuste le padding pour une taille plus petite */
+  font-size: 14px; /* Réduit la taille de la police */
+  text-align: center; /* Centre le texte dans le bouton */
+}
