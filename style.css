@@ -1261,8 +1261,8 @@ header h1 {
   margin-bottom: 30px;
 }
 
-.cv-btn-container {
-  margin-top: 30px;
+.d-btn-container {
+  margin-top: 10px;
 }
 
 .cv-btn {
@@ -1283,3 +1283,4 @@ header h1 {
 .cv-btn:hover {
   background-color: #ff9800;
 }
+
